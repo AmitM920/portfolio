@@ -1,0 +1,80 @@
+<section id="skills" class="skills" aria-labelledby="skills-title">
+  <div class="section-intro">
+    <h2 id="skills-title">Skills</h2><p>
+      Tools I use to turn ideas into working experiences
+    </p>
+  </div><div class="skill-grid">
+    <div class="skill">
+      <div class="meter"><span>65%</span></div><strong>Figma</strong>
+    </div><div class="skill">
+      <div class="meter"><span>55%</span></div><strong>Django</strong>
+    </div><div class="skill">
+      <div class="meter"><span>76%</span></div><strong>Adobe Photoshop</strong>
+    </div><div class="skill">
+      <div class="meter"><span>75%</span></div><strong>ReactJs</strong>
+    </div><div class="skill">
+      <div class="meter"><span>80%</span></div><strong>Python</strong>
+    </div>
+  </div>
+</section>
+<style>
+  .skills {
+    padding: 0 clamp(24px, 5.55vw, 80px) 150px;
+  }
+  .section-intro {
+    text-align: center;
+  }
+  h2 {
+    margin: 0;
+    color: #fefefe;
+    font-size: clamp(30px, 3.2vw, 40px);
+  }
+  .section-intro p {
+    margin: 14px 0 0;
+    color: #707070;
+    font-size: 16px;
+  }
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    gap: 26px;
+    max-width: 1280px;
+    margin: 52px auto 0;
+  }
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    color: #959595;
+    text-align: center;
+  }
+  .skill strong {
+    font-size: 16px;
+  }
+  .meter {
+    display: grid;
+    place-items: center;
+    width: clamp(92px, 9vw, 130px);
+    aspect-ratio: 1;
+    border: 8px solid #2e2e2e;
+    border-top-color: #fd6f00;
+    border-right-color: #fd6f00;
+    border-radius: 50%;
+    color: #fd6f00;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  @media (max-width: 720px) {
+    .skills {
+      padding-bottom: 90px;
+    }
+    .skill-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 12px;
+    }
+    .skill:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

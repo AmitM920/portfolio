@@ -1,0 +1,40 @@
+---
+const { title, href, image } = Astro.props;
+---
+
+<a
+  class="project-card"
+  href={href}
+  target="_blank"
+  rel="noreferrer"
+  aria-label={`Open ${title}`}
+  ><img src={image} alt={title} /><span>{title}</span></a
+>
+<style>
+  .project-card {
+    display: block;
+    overflow: hidden;
+    border-radius: 28px 28px 16px 16px;
+    background: rgb(255 255 255 / 8%);
+    color: #c6c6c6;
+    text-decoration: none;
+  }
+  .project-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 584 / 415;
+    object-fit: cover;
+  }
+  .project-card span {
+    display: block;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .project-card:hover,
+  .project-card:focus-visible {
+    color: #fd6f00;
+    transform: translateY(-3px);
+  }
+</style>

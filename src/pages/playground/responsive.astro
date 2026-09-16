@@ -1,0 +1,266 @@
+---
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Screen Playground</title>
+    <style>
+      :root {
+        --desktop-top: #c9a09f;
+        --desktop-hero: #d58b8d;
+        --desktop-card: #dfbbbb;
+        --tablet-top: #bd8e8e;
+        --tablet-hero: #d8898b;
+        --tablet-card: #853335;
+        --phone-top: #a47d7d;
+        --phone-card: #b35b5d;
+        --screen-bg: #ffffff;
+        --stage-bg: #201f1f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--screen-bg);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .playground {
+        display: grid;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      .screen {
+        overflow: hidden;
+        width: 100%;
+        background: var(--screen-bg);
+        display: none;
+      }
+
+      .desktop-screen {
+        min-height: 100vh;
+        display: block;
+      }
+
+      .desktop-screen .screen-content {
+        min-height: 100vh;
+      }
+
+      .desktop-top {
+        height: 12.5vh;
+        background: var(--desktop-top);
+      }
+
+      .desktop-hero {
+        height: 52vh;
+        background: var(--desktop-hero);
+      }
+
+      .desktop-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+        padding: 4vh 4.86vw 11.33vh;
+        background: var(--screen-bg);
+      }
+
+      .desktop-card {
+        height: 20.31vh;
+        background: var(--desktop-card);
+      }
+
+      .tablet-screen {
+        width: 100%;
+        justify-self: center;
+      }
+
+      .tablet-screen .screen-content {
+        min-height: 540px;
+      }
+
+      .tablet-top {
+        height: 42px;
+        padding: 8px;
+        background: #1515df;
+      }
+
+      .tablet-top-inner {
+        height: 26px;
+        background: var(--tablet-top);
+      }
+
+      .tablet-hero {
+        height: 186px;
+        background: var(--tablet-hero);
+      }
+
+      .tablet-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+        padding: 29px 27px 40px;
+        background: var(--screen-bg);
+      }
+
+      .tablet-card {
+        height: 60px;
+        background: var(--tablet-card);
+      }
+
+      .phone-screen {
+        width: min(100%, 390px);
+        justify-self: center;
+      }
+
+      .phone-screen .screen-content {
+        min-height: 520px;
+      }
+
+      .phone-top {
+        height: 34px;
+        padding: 4px;
+        background: #e2c522;
+      }
+
+      .phone-top-inner {
+        height: 26px;
+        background: var(--phone-card);
+      }
+
+      .phone-hero {
+        height: 131px;
+        background: var(--phone-top);
+      }
+
+      .phone-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 25px 16px 168px;
+        background: var(--screen-bg);
+      }
+
+      .phone-card {
+        height: 39px;
+        background: var(--phone-card);
+      }
+
+      @media (max-width: 1024px) {
+        .desktop-screen {
+          display: none;
+        }
+
+        .tablet-screen {
+          display: block;
+        }
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 0;
+        }
+
+        .tablet-screen {
+          display: none;
+        }
+
+        .phone-screen {
+          display: block;
+        }
+
+        .phone-screen {
+          width: 100%;
+        }
+
+        .desktop-screen .screen-content {
+          min-height: 0;
+        }
+
+        .desktop-top {
+          height: 88px;
+        }
+
+        .desktop-hero {
+          height: 220px;
+        }
+
+        .desktop-cards {
+          padding: 16px 16px 32px;
+        }
+
+        .desktop-card {
+          height: 72px;
+        }
+
+        .tablet-screen .screen-content,
+        .phone-screen .screen-content {
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .desktop-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .tablet-cards {
+          padding-inline: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="playground">
+      <section class="screen desktop-screen">
+        <div class="screen-content">
+          <div class="desktop-top"></div>
+          <div class="desktop-hero"></div>
+          <div class="desktop-cards">
+            <div class="desktop-card"></div>
+            <div class="desktop-card"></div>
+            <div class="desktop-card"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen tablet-screen">
+        <div class="screen-content">
+          <div class="tablet-top">
+            <div class="tablet-top-inner"></div>
+          </div>
+          <div class="tablet-hero"></div>
+          <div class="tablet-cards">
+            <div class="tablet-card"></div>
+            <div class="tablet-card"></div>
+            <div class="tablet-card"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen phone-screen">
+        <div class="screen-content">
+          <div class="phone-top">
+            <div class="phone-top-inner"></div>
+          </div>
+          <div class="phone-hero"></div>
+          <div class="phone-cards">
+            <div class="phone-card"></div>
+            <div class="phone-card"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

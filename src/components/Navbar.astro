@@ -1,0 +1,66 @@
+<nav class="navbar" aria-label="Main navigation">
+  <a class="brand" href="#home" aria-label="Amit Mehta home">Amit</a>
+  <ul class="menu">
+    <li><a class="active" href="#home">Home</a></li><li>
+      <a href="#projects">Projects</a>
+    </li><li><a href="#about">Skills</a></li><li>
+      <a href="#about">About</a>
+    </li><li><a href="#contact">Contact me</a></li>
+  </ul>
+</nav>
+<style>
+  .navbar {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px clamp(20px, 5.55vw, 80px);
+  }
+  .brand {
+    background: linear-gradient(90deg, #fa6e00 0%, #e60026 100%);
+    background-clip: text;
+    color: transparent;
+    font-family: Satisfy, cursive;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  .menu {
+    display: flex;
+    gap: clamp(18px, 4.2vw, 60px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .menu a {
+    color: #959595;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .menu a:hover,
+  .menu a:focus-visible,
+  .menu a.active {
+    color: #fd6f00;
+  }
+  @media (max-width: 620px) {
+    .navbar {
+      align-items: flex-start;
+    }
+    .brand {
+      font-size: 24px;
+    }
+    .menu {
+      max-width: 72%;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 16px;
+    }
+    .menu a {
+      font-size: 11px;
+    }
+  }
+</style>

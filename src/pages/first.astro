@@ -1,0 +1,361 @@
+---
+const avatar = "https://www.figma.com/api/mcp/asset/82f746d6-55a7-48c9-9364-95ed6f673ed5.png";
+const glowFlair = "https://www.figma.com/api/mcp/asset/77ff77d9-88d4-4a5a-90df-ab044f036866.svg";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amit Mehta</title>
+    <style>
+      :root {
+        --navy: #0e1831;
+        --cyan: #59defd;
+        --muted-white: rgba(255, 255, 255, 0.65);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--navy);
+      }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--navy);
+      }
+
+      .navbar {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        width: 100%;
+        min-height: 46px;
+        padding: 8px 36px;
+        color: #ffffff;
+        background: #050c1d;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      .brand {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: 6px solid #f12711;
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        content: "";
+      }
+
+      .brand-mark::before {
+        top: -6px;
+        left: -6px;
+        border: 6px solid #40e0d0;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .brand-mark::after {
+        right: -6px;
+        bottom: -6px;
+        border: 6px solid #12c2e9;
+        border-left: 0;
+        border-top: 0;
+      }
+
+      .brand-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 2px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .brand-copy small {
+        font-size: 8px;
+        font-weight: 700;
+      }
+
+      .brand-copy strong {
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      .menu a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .hero-copy {
+        position: absolute;
+        z-index: 2;
+        top: 26.5%;
+        left: 7.8%;
+        width: min(56vw, 712px);
+      }
+
+      .intro {
+        margin: 0 0 6px;
+        color: var(--cyan);
+        font-size: clamp(24px, 3.52vw, 36px);
+        line-height: 1.1;
+        font-weight: 400;
+      }
+
+      .name {
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(42px, 6.25vw, 64px);
+        line-height: 1.15;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        text-shadow: 3px 0 4px rgba(255, 255, 255, 0.36);
+        opacity: 0;
+        animation: name-reveal 3s linear forwards;
+      }
+
+      .tagline {
+        margin: 4px 0 0;
+        color: var(--muted-white);
+        font-size: clamp(28px, 4.1vw, 42px);
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .glow {
+        position: absolute;
+        z-index: 0;
+        top: -16vh;
+        left: 13.5%;
+        width: min(90vw, 924px);
+        height: min(87vw, 886px);
+        pointer-events: none;
+        opacity: 0.27;
+        animation: glow-motion 3s ease-in-out forwards;
+      }
+
+      .glow img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .avatar {
+        position: absolute;
+        z-index: 1;
+        top: 12.75%;
+        left: 34.5%;
+        width: min(43vw, 440px);
+        aspect-ratio: 440 / 422;
+        overflow: hidden;
+        border-radius: 50%;
+        animation: avatar-slide 3s linear forwards;
+      }
+
+      .avatar img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom center;
+      }
+
+      @keyframes name-reveal {
+        0% {
+          opacity: 0;
+        }
+        0.267% {
+          opacity: 0;
+          animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+        }
+        100% {
+          opacity: 0.81;
+        }
+      }
+
+      @keyframes glow-motion {
+        0% {
+          opacity: 0.27;
+          translate: 336.941px 16.13px;
+          scale: 1 1;
+        }
+        25% {
+          opacity: 0.8;
+          translate: 342.005px -14.109px;
+          scale: 1.075 0.925;
+        }
+        50% {
+          opacity: 1;
+          translate: 308.265px -43.555px;
+          scale: 0.925 1.075;
+        }
+        75%,
+        100% {
+          opacity: 1;
+          translate: 308.265px -2.73px;
+          scale: 0.925 1.075;
+        }
+      }
+
+      @keyframes avatar-slide {
+        0% {
+          translate: 123px -2px;
+        }
+        0.267% {
+          translate: 123px -2px;
+        }
+        100% {
+          translate: 333.781px -3.781px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .navbar {
+          gap: 20px;
+          padding: 8px 16px;
+        }
+
+        .menu {
+          gap: 16px;
+          overflow-x: auto;
+          font-size: 11px;
+        }
+
+        .hero {
+          min-height: 100svh;
+        }
+
+        .hero-copy {
+          top: 17%;
+          left: 8%;
+          width: 84%;
+        }
+
+        .intro {
+          font-size: clamp(22px, 7vw, 30px);
+        }
+
+        .name {
+          font-size: clamp(36px, 11vw, 54px);
+        }
+
+        .tagline {
+          font-size: clamp(24px, 8vw, 36px);
+        }
+
+        .glow {
+          top: 24%;
+          left: 8%;
+          width: 110vw;
+          height: 88vw;
+        }
+
+        .avatar {
+          top: 47%;
+          left: 24%;
+          width: 58vw;
+        }
+
+        @keyframes avatar-slide {
+          0%, 0.267% {
+            translate: 32px -2px;
+          }
+          100% {
+            translate: 76px -3px;
+          }
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .name,
+        .glow,
+        .avatar {
+          animation: none;
+          opacity: 1;
+          translate: 0 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="My Logo home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-copy">
+            <small>This is</small>
+            <strong>My Logo</strong>
+          </span>
+        </a>
+        <ul class="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-copy">
+        <p class="intro">Hi, my name is</p>
+        <h1 class="name">Amit Mehta.</h1>
+        <p class="tagline">I build things for the web.</p>
+      </div>
+
+      <div class="glow" aria-hidden="true">
+        <img src={glowFlair} alt="" />
+      </div>
+
+      <div class="avatar">
+        <img src={avatar} alt="Amit Mehta" />
+      </div>
+    </main>
+  </body>
+</html>

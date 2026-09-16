@@ -1,0 +1,166 @@
+---
+const assetPath =
+  "https://www.figma.com/api/mcp/asset/9bda209c-2f9a-472a-8fa4-5991feab83d8";
+const portrait = `${assetPath}/78d9c.png`;
+const halo = `${assetPath}/115cc.svg`;
+const linkedin = `${assetPath}/31143.svg`;
+const github = `${assetPath}/cc72c.svg`;
+---
+
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="greeting">Hi I am</p><h1 id="hero-title">Amit Mehta</h1><p
+      class="role"
+    >
+      Web Developer
+    </p>
+    <div class="socials">
+      <a
+        href="https://www.linkedin.com/in/amit-mehta369/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Amit Mehta on LinkedIn"><img src={linkedin} alt="" /></a
+      ><a
+        href="https://github.com/AmitM920"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Amit Mehta on GitHub"><img src={github} alt="" /></a>
+    </div>
+    <a class="download" href="/resume.pdf" download="Amit-Mehta-Resume.pdf"
+      >Download CV</a
+    >
+  </div>
+  <div class="hero-photo">
+    <img class="halo" src={halo} alt="" aria-hidden="true" /><img
+      class="portrait"
+      src={portrait}
+      alt="Amit Mehta in a black suit"
+    />
+  </div>
+</section>
+<style>
+  .hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+    align-items: center;
+    min-height: 760px;
+    padding: 80px clamp(30px, 5.55vw, 80px) 70px;
+    overflow: hidden;
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    padding-left: clamp(0px, 3.5vw, 50px);
+    transform: translateY(-145px);
+  }
+  .greeting {
+    margin: 0 0 10px;
+    color: #707070;
+    font-size: clamp(20px, 1.7vw, 24px);
+    font-weight: 600;
+  }
+  h1 {
+    margin: 0 0 12px;
+    color: #959595;
+    font-size: clamp(28px, 2vw, 30px);
+    line-height: 1.1;
+  }
+  .role {
+    margin: 0;
+    background: linear-gradient(90deg, #fa6e00 0%, #e60026 100%);
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(40px, 4.86vw, 70px);
+    font-weight: 900;
+    letter-spacing: 0.03em;
+  }
+  .socials {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0 28px;
+  }
+  .socials a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fd6f00;
+    border-radius: 50%;
+  }
+  .socials a:hover,
+  .socials a:focus-visible {
+    transform: translateY(-2px);
+    background: #fd6f00;
+  }
+  .socials img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+  .download {
+    display: inline-flex;
+    padding: 12px 30px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #fa6e00 0%, #e60026 100%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .download:hover,
+  .download:focus-visible {
+    transform: translateY(-2px);
+    background: #e60026;
+  }
+  .hero-photo {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 600px);
+    aspect-ratio: 1 / 1.1;
+    transform: translateY(-40px);
+  }
+  .portrait {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width: 88%;
+    height: 90%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 48%;
+    mix-blend-mode: luminosity;
+  }
+  .halo {
+    position: absolute;
+    z-index: 0;
+   inset: 0% -1% 8%;
+    width: 88%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media (max-width: 720px) {
+    
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: 680px;
+      padding: 130px 24px 40px;
+    }
+    .hero-copy {
+      padding: 0;
+      text-align: center;
+      transform: translateY(-30px);
+    }
+    .role {
+      font-size: clamp(36px, 11vw, 56px);
+    }
+    .socials {
+      justify-content: center;
+    }
+    .hero-photo {
+      width: min(84vw, 390px);
+      margin-top: 24px;
+      transform: translateY(-45px);
+    }
+  }
+</style>

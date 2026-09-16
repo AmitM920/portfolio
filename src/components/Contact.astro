@@ -1,0 +1,103 @@
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="section-intro">
+    <h2 id="contact-title">Contact me</h2><p>
+      Cultivating Connections: Reach Out and Connect with Me
+    </p>
+  </div><form
+    class="contact-form"
+    action="https://formspree.io/f/mgavwpao"
+    method="post"
+  >
+    <label
+      ><span class="sr-only">Name</span><input
+        name="name"
+        placeholder="Name"
+        required
+      /></label
+    ><label
+      ><span class="sr-only">Email</span><input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      /></label
+    ><label
+      ><span class="sr-only">Phone number</span><input
+        name="phone"
+        placeholder="Phone Number"
+      /></label
+    ><label
+      ><span class="sr-only">Project details</span><textarea
+        name="details"
+        placeholder="Project Details..."
+        required></textarea></label
+    ><button type="submit">Send</button>
+  </form>
+</section>
+<style>
+  .contact {
+    padding: 0 24px 120px;
+  }
+  .section-intro {
+    text-align: center;
+  }
+  h2 {
+    margin: 0;
+    color: #fefefe;
+    font-size: clamp(30px, 3.2vw, 40px);
+  }
+  .section-intro p {
+    margin: 14px 0 0;
+    color: #707070;
+    font-size: 16px;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min(100%, 491px);
+    margin: 50px auto 0;
+  }
+  input,
+  textarea {
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    padding: 14px 24px;
+    background: rgb(255 255 255 / 4%);
+    color: #fff;
+    font: inherit;
+  }
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 1px #fd6f00;
+  }
+  textarea {
+    min-height: 162px;
+    resize: vertical;
+  }
+  button {
+    align-self: flex-end;
+    padding: 10px 40px;
+    border: 2px solid #959595;
+    border-radius: 8px;
+    background: transparent;
+    color: #959595;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button:hover,
+  button:focus-visible {
+    border-color: #fd6f00;
+    color: #fd6f00;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+</style>

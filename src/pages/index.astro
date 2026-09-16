@@ -1,17 +1,61 @@
 ---
-
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet" />
+    <title>Amit Mehta | Web Developer</title>
+    <style>
+      :root { --accent-gradient: linear-gradient(90deg, #FA6E00 0%, #E60026 100%); }
+      :global(*) { box-sizing: border-box; }
+      :global(html) { scroll-behavior: smooth; background: #121212; }
+      :global(body) { margin: 0; overflow-x: hidden; background: #121212; color: #fefefe; font-family: Lato, "Trebuchet MS", sans-serif; }
+      :global(a) { transition: color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+      .page { width: min(100%, 1440px); margin: 0 auto; }
+      .section-heading { margin: 0; color: #fefefe; font-size: clamp(30px, 3.2vw, 40px); font-weight: 700; letter-spacing: 0.03em; text-align: center; }
+      .projects { padding: 0 clamp(20px, 5.55vw, 80px) 150px; }
+      .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 5.7vw, 82px); max-width: 1280px; margin: 70px auto 0; }
+      .footer { display: flex; flex-direction: column; align-items: center; gap: 34px; padding: 40px 24px 24px; background: rgb(255 255 255 / 4%); color: #959595; }
+      .footer-brand { background: var(--accent-gradient); background-clip: text; color: transparent; font-family: Satisfy, cursive; font-size: 34px; font-weight: 400; text-decoration: none; }
+      .footer nav, .footer-socials, .footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+      .footer a { color: #959595; font-size: 14px; text-decoration: none; }
+      .footer a:hover, .footer a:focus-visible { color: #fd6f00; }
+      .footer-contact { gap: 40px; }
+      .copyright { width: min(100%, 720px); margin: 0; padding-top: 16px; border-top: 1px solid #707070; color: #707070; font-size: 12px; text-align: center; }
+      @media (max-width: 720px) { .projects { padding-bottom: 90px; } .project-grid { grid-template-columns: 1fr; margin-top: 40px; } }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <Navbar /><Hero /><About /><Skills />
+      <section id="projects" class="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section-heading">Projects</h2>
+        <div class="project-grid">
+          <ProjectCard title="Wedding Event Website" href="https://abhigotkomal.co.in/" image="https://www.figma.com/api/mcp/asset/9bda209c-2f9a-472a-8fa4-5991feab83d8/35944.png" />
+          <ProjectCard title="Contact Management Application" href="https://amitm920.github.io/CRUD-contact-management-app/" image="https://www.figma.com/api/mcp/asset/9bda209c-2f9a-472a-8fa4-5991feab83d8/fa6d7.png" />
+        </div>
+      </section>
+      <Contact />
+      <footer class="footer">
+        <a class="footer-brand" href="#home">Amit</a>
+        <nav aria-label="Footer navigation"><a href="#home">Home</a><a href="#projects">Project</a><a href="#about">Skills</a><a href="#about">About</a><a href="#contact">Contact me</a></nav>
+        <div class="footer-socials"><a href="https://www.linkedin.com/in/amit-mehta369/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/AmitM920" target="_blank" rel="noreferrer">GitHub</a></div>
+        <div class="footer-contact"><a href="mailto:amitmehta9202000@gmail.com">amitmehta9202000@gmail.com</a><a href="tel:+917011823233">+91 7011823233</a></div>
+        <p class="copyright">Built with care by Amit Mehta</p>
+      </footer>
+    </main>
+  </body>
 </html>

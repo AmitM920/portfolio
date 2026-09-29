@@ -1,14 +1,18 @@
 ---
-const assetPath =
-  "https://www.figma.com/api/mcp/asset/9bda209c-2f9a-472a-8fa4-5991feab83d8";
-const portrait = `${assetPath}/78d9c.png`;
-const halo = `${assetPath}/115cc.svg`;
-const linkedin = `${assetPath}/31143.svg`;
-const github = `${assetPath}/cc72c.svg`;
+const portrait = "/public/amit_header.png";
+const halo = "/public/halo.png";
+const linkedin = "/public/linkedin.png";
+const github = "/public/github.png";
 ---
 
 <section id="home" class="hero" aria-labelledby="hero-title">
   <div class="hero-copy">
+    <img
+      class="hero-copy-vector"
+      src={`${import.meta.env.BASE_URL}/Vector.png`}
+      alt=""
+      aria-hidden="true"
+    />
     <p class="greeting">Hi I am</p><h1 id="hero-title">Amit Mehta</h1><p
       class="role"
     >
@@ -51,8 +55,21 @@ const github = `${assetPath}/cc72c.svg`;
   .hero-copy {
     position: relative;
     z-index: 1;
+    isolation: isolate;
     padding-left: clamp(0px, 3.5vw, 50px);
     transform: translateY(-145px);
+  }
+  .hero-copy-vector {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: min(100%, 540px);
+    height: auto;
+    aspect-ratio: 751 / 673;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
   .greeting {
     margin: 0 0 10px;

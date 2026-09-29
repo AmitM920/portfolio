@@ -44,8 +44,8 @@ import Contact from "../components/Contact.astro";
       <section id="projects" class="projects" aria-labelledby="projects-title">
         <h2 id="projects-title" class="section-heading">Projects</h2>
         <div class="project-grid">
-          <ProjectCard title="Wedding Event Website" href="https://abhigotkomal.co.in/" image="https://www.figma.com/api/mcp/asset/9bda209c-2f9a-472a-8fa4-5991feab83d8/35944.png" />
-          <ProjectCard title="Contact Management Application" href="https://amitm920.github.io/CRUD-contact-management-app/" image="https://www.figma.com/api/mcp/asset/9bda209c-2f9a-472a-8fa4-5991feab83d8/fa6d7.png" />
+          <ProjectCard title="Wedding Event Website" href="https://abhigotkomal.co.in/" image={`${import.meta.env.BASE_URL}/p1.png`} />
+          <ProjectCard title="Contact Management Application" href="https://amitm920.github.io/CRUD-contact-management-app/" image={`${import.meta.env.BASE_URL}/p2.png`} />
         </div>
       </section>
       <Contact />

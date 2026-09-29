@@ -5,15 +5,50 @@
     </p>
   </div><div class="skill-grid">
     <div class="skill">
-      <div class="meter"><span>65%</span></div><strong>Figma</strong>
+      <div class="skill-circle" style="--progress: 65">
+        <svg class="skill-ring" viewBox="0 0 130 130" aria-hidden="true">
+          <circle class="skill-ring-track" cx="65" cy="65" r="58" pathLength="100" />
+          <circle class="skill-ring-progress" cx="65" cy="65" r="58" pathLength="100" />
+        </svg>
+        <img class="skill-icon" src={`${import.meta.env.BASE_URL}/figma.png`} alt="" aria-hidden="true" />
+      </div>
+      <div class="skill-meta"><span>65%</span><strong>Figma</strong></div>
     </div><div class="skill">
-      <div class="meter"><span>55%</span></div><strong>Django</strong>
+      <div class="skill-circle" style="--progress: 55">
+        <svg class="skill-ring" viewBox="0 0 130 130" aria-hidden="true">
+          <circle class="skill-ring-track" cx="65" cy="65" r="58" pathLength="100" />
+          <circle class="skill-ring-progress" cx="65" cy="65" r="58" pathLength="100" />
+        </svg>
+        <img class="skill-icon" src={`${import.meta.env.BASE_URL}/django.png`} alt="" aria-hidden="true" />
+      </div>
+      <div class="skill-meta"><span>55%</span><strong>Django</strong></div>
     </div><div class="skill">
-      <div class="meter"><span>76%</span></div><strong>Adobe Photoshop</strong>
+      <div class="skill-circle" style="--progress: 76">
+        <svg class="skill-ring" viewBox="0 0 130 130" aria-hidden="true">
+          <circle class="skill-ring-track" cx="65" cy="65" r="58" pathLength="100" />
+          <circle class="skill-ring-progress" cx="65" cy="65" r="58" pathLength="100" />
+        </svg>
+        <img class="skill-icon" src={`${import.meta.env.BASE_URL}/js.png`} alt="" aria-hidden="true" />
+      </div>
+      <div class="skill-meta"><span>76%</span><strong>JavaScript</strong></div>
     </div><div class="skill">
-      <div class="meter"><span>75%</span></div><strong>ReactJs</strong>
+      <div class="skill-circle" style="--progress: 75">
+        <svg class="skill-ring" viewBox="0 0 130 130" aria-hidden="true">
+          <circle class="skill-ring-track" cx="65" cy="65" r="58" pathLength="100" />
+          <circle class="skill-ring-progress" cx="65" cy="65" r="58" pathLength="100" />
+        </svg>
+        <img class="skill-icon" src={`${import.meta.env.BASE_URL}/react.png`} alt="" aria-hidden="true" />
+      </div>
+      <div class="skill-meta"><span>75%</span><strong>React</strong></div>
     </div><div class="skill">
-      <div class="meter"><span>80%</span></div><strong>Python</strong>
+      <div class="skill-circle" style="--progress: 80">
+        <svg class="skill-ring" viewBox="0 0 130 130" aria-hidden="true">
+          <circle class="skill-ring-track" cx="65" cy="65" r="58" pathLength="100" />
+          <circle class="skill-ring-progress" cx="65" cy="65" r="58" pathLength="100" />
+        </svg>
+        <img class="skill-icon" src={`${import.meta.env.BASE_URL}/python.png`} alt="" aria-hidden="true" />
+      </div>
+      <div class="skill-meta"><span>80%</span><strong>Python</strong></div>
     </div>
   </div>
 </section>
@@ -45,25 +80,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 24px;
     color: #959595;
     text-align: center;
   }
-  .skill strong {
-    font-size: 16px;
-  }
-  .meter {
+  .skill-circle {
+    position: relative;
     display: grid;
     place-items: center;
-    width: clamp(92px, 9vw, 130px);
+    width: 130px;
     aspect-ratio: 1;
-    border: 8px solid #2e2e2e;
-    border-top-color: #fd6f00;
-    border-right-color: #fd6f00;
     border-radius: 50%;
-    color: #fd6f00;
-    font-size: 20px;
+  }
+  .skill-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .skill-ring-track,
+  .skill-ring-progress {
+    fill: none;
+    stroke-width: 8;
+  }
+  .skill-ring-track {
+    stroke: #2e2e2e;
+  }
+  .skill-ring-progress {
+    stroke: #fd6f00;
+    stroke-dasharray: 100;
+    stroke-dashoffset: calc(100 - var(--progress));
+    stroke-linecap: round;
+  }
+  .skill-icon {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  .skill-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
     font-weight: 700;
+  }
+  .skill-meta span {
+    background: linear-gradient(98deg, #fd6f00 3.1%, #e46400 94.54%);
+    background-clip: text;
+    color: transparent;
+    font-size: 30px;
+  }
+  .skill-meta strong {
+    color: #959595;
+    font-size: 24px;
+    white-space: nowrap;
   }
   @media (max-width: 720px) {
     .skills {
